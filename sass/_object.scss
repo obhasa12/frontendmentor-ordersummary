@@ -1,0 +1,87 @@
+@use 'variables' as v;
+
+.object{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    border: red solid 2px;
+    width: 20.4375rem;
+    height: 35.4375rem;
+
+    &__image{
+        background-image: url(../images/illustration-hero.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: 1.875rem;
+        height: 10rem;
+    }
+
+    &__text{
+        margin: 0 1.625rem;
+    }
+
+    &__title{
+       margin-bottom: 1.125rem;
+       font-size: 1.3125rem;
+       font-weight: 900;
+    }
+
+    &__description{
+        margin-bottom: 1rem;
+        color: v.$Desaturatedblue;
+        line-height: 1.625rem;
+    }
+
+    &__price{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 1.5625rem;
+        background-color: v.$Verypaleblue;
+        border: 2px red solid;
+        width: 16.9375rem;
+        height: 5.125rem;
+    }
+
+    &__logo{
+        background-image: url(../images/icon-music.svg);
+        width: 3.0625rem;
+        height: 3.0625rem;
+    }
+
+    &__pricelist{
+        flex-direction: row;
+    }
+
+    &__typelist{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    &__confirmation{
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.875rem;
+        color: v.$Darkblue;
+    }
+
+    &__payment{
+        margin-bottom: 1.5625rem;
+        font-family: 'Red Hat Display', sans-serif;
+        cursor: pointer;
+        background-color: v.$Brightblue;
+        color: white;
+        width: 16.9375rem;
+        height: 3.125rem;
+        border: 2px red solid;
+        font-weight: 700;
+    }
+
+    &__order{
+        color: v.$Desaturatedblue;
+        font-weight: 700;
+    }
+}

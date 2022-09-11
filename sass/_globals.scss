@@ -1,0 +1,26 @@
+@use 'variables' as v;
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: v.$Paleblue;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:10px black solid;
+    min-height: 100vh;
+}
