@@ -1,13 +1,21 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .object{
     display: flex;
     flex-direction: column;
+    border-radius: 1.25rem;
+    overflow: hidden;
     text-align: center;
     background-color: #fff;
-    border: red solid 2px;
+    // border: red solid 2px;
     width: 20.4375rem;
     height: 35.4375rem;
+
+    @include m.breakpoints-up(large){
+        width: 28.25rem;
+        height: 43.5625rem;
+    }
 
     &__image{
         background-image: url(../images/illustration-hero.svg);
@@ -15,22 +23,41 @@
         background-repeat: no-repeat;
         margin-bottom: 1.875rem;
         height: 10rem;
+
+        @include m.breakpoints-up(large){
+            height: 13.75rem;
+            margin-bottom: 3.4375rem;
+        }
     }
 
     &__text{
         margin: 0 1.625rem;
+        @include m.breakpoints-up(large){
+            margin: 0 3rem;
+        }
     }
 
     &__title{
        margin-bottom: 1.125rem;
        font-size: 1.3125rem;
        font-weight: 900;
+
+       @include m.breakpoints-up(large){
+        font-size: 1.625rem;
+        margin-bottom: 1.5625rem;
+    }
     }
 
     &__description{
         margin-bottom: 1rem;
         color: v.$Desaturatedblue;
         line-height: 1.625rem;
+        @include m.breakpoints-up(large){
+            padding: 0 2.0625rem;
+           line-height: 1.625rem;
+           font-size: 1rem;
+           margin-bottom: 1.4375rem;
+        }
     }
 
     &__price{
@@ -39,10 +66,16 @@
         justify-content: space-around;
         align-items: center;
         margin-bottom: 1.5625rem;
+        border-radius: 0.9375rem;
         background-color: v.$Verypaleblue;
-        border: 2px red solid;
+        // border: 2px red solid;
         width: 16.9375rem;
         height: 5.125rem;
+        @include m.breakpoints-up(large){
+            width: 100%;
+            margin-bottom: 2.0625rem;
+        }
+
     }
 
     &__logo{
@@ -58,30 +91,64 @@
     &__typelist{
         font-size: 1rem;
         font-weight: 700;
+        letter-spacing: -0.0625rem;
+
+    }
+
+    &__priceactual{
+        color: v.$Desaturatedblue;
+        font-weight: 500;
     }
 
     &__confirmation{
         text-decoration: underline;
         cursor: pointer;
-        font-weight: 700;
-        font-size: 0.875rem;
+        font-weight: 900;
+        font-size: 0.8125rem;
         color: v.$Darkblue;
+        transition: color,text-decoration 150ms ease-in-out;
+
+        &:hover{
+            color: rgba(31, 47, 86, 0.8);
+            text-decoration: none;
+        }
+
     }
 
     &__payment{
         margin-bottom: 1.5625rem;
         font-family: 'Red Hat Display', sans-serif;
         cursor: pointer;
+        border-radius: 10px;
         background-color: v.$Brightblue;
         color: white;
         width: 16.9375rem;
         height: 3.125rem;
-        border: 2px red solid;
+        // border: 2px red solid;
         font-weight: 700;
+        font-size: 1rem;
+        border: none;
+        transition: opacity 200ms ease-in-out;
+
+        &:hover{
+            opacity: 0.75;
+        }
+
+        @include m.breakpoints-up(large){
+            width: 100%;
+            margin-bottom: 2.25rem;
+        }
     }
 
     &__order{
         color: v.$Desaturatedblue;
         font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: color 150ms ease-in-out;
+
+        &:hover{
+            color: black;
+        }
     }
 }

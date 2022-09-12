@@ -19,18 +19,24 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 10px black solid;
   min-height: 100vh;
 }
 
 .object {
   display: flex;
   flex-direction: column;
+  border-radius: 1.25rem;
+  overflow: hidden;
   text-align: center;
   background-color: #fff;
-  border: red solid 2px;
   width: 20.4375rem;
   height: 35.4375rem;
+}
+@media (min-width: 64em) {
+  .object {
+    width: 28.25rem;
+    height: 43.5625rem;
+  }
 }
 .object__image {
   background-image: url(../images/illustration-hero.svg);
@@ -39,18 +45,43 @@ body {
   margin-bottom: 1.875rem;
   height: 10rem;
 }
+@media (min-width: 64em) {
+  .object__image {
+    height: 13.75rem;
+    margin-bottom: 3.4375rem;
+  }
+}
 .object__text {
   margin: 0 1.625rem;
+}
+@media (min-width: 64em) {
+  .object__text {
+    margin: 0 3rem;
+  }
 }
 .object__title {
   margin-bottom: 1.125rem;
   font-size: 1.3125rem;
   font-weight: 900;
 }
+@media (min-width: 64em) {
+  .object__title {
+    font-size: 1.625rem;
+    margin-bottom: 1.5625rem;
+  }
+}
 .object__description {
   margin-bottom: 1rem;
   color: hsl(224deg, 23%, 55%);
   line-height: 1.625rem;
+}
+@media (min-width: 64em) {
+  .object__description {
+    padding: 0 2.0625rem;
+    line-height: 1.625rem;
+    font-size: 1rem;
+    margin-bottom: 1.4375rem;
+  }
 }
 .object__price {
   display: flex;
@@ -58,10 +89,16 @@ body {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 1.5625rem;
+  border-radius: 0.9375rem;
   background-color: hsl(225deg, 100%, 98%);
-  border: 2px red solid;
   width: 16.9375rem;
   height: 5.125rem;
+}
+@media (min-width: 64em) {
+  .object__price {
+    width: 100%;
+    margin-bottom: 2.0625rem;
+  }
 }
 .object__logo {
   background-image: url(../images/icon-music.svg);
@@ -74,26 +111,56 @@ body {
 .object__typelist {
   font-size: 1rem;
   font-weight: 700;
+  letter-spacing: -0.0625rem;
+}
+.object__priceactual {
+  color: hsl(224deg, 23%, 55%);
+  font-weight: 500;
 }
 .object__confirmation {
   text-decoration: underline;
   cursor: pointer;
-  font-weight: 700;
-  font-size: 0.875rem;
+  font-weight: 900;
+  font-size: 0.8125rem;
   color: hsl(223deg, 47%, 23%);
+  transition: color, -webkit-text-decoration 150ms ease-in-out;
+  transition: color, text-decoration 150ms ease-in-out;
+  transition: color, text-decoration 150ms ease-in-out, -webkit-text-decoration 150ms ease-in-out;
+}
+.object__confirmation:hover {
+  color: rgba(31, 47, 86, 0.8);
+  text-decoration: none;
 }
 .object__payment {
   margin-bottom: 1.5625rem;
   font-family: "Red Hat Display", sans-serif;
   cursor: pointer;
+  border-radius: 10px;
   background-color: hsl(245deg, 75%, 52%);
   color: white;
   width: 16.9375rem;
   height: 3.125rem;
-  border: 2px red solid;
   font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  transition: opacity 200ms ease-in-out;
+}
+.object__payment:hover {
+  opacity: 0.75;
+}
+@media (min-width: 64em) {
+  .object__payment {
+    width: 100%;
+    margin-bottom: 2.25rem;
+  }
 }
 .object__order {
   color: hsl(224deg, 23%, 55%);
   font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 150ms ease-in-out;
+}
+.object__order:hover {
+  color: black;
 }/*# sourceMappingURL=style.css.map */
